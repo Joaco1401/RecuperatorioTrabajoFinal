@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Reserva de viajes</title>
+</head>
+<body onload="cargar()">
+    <h1>Reserva de viajes</h1>
+    <nav>
+        <a href="#form">Ingreso de datos</a>
+        <a href="#tablaviajes">Vuelos</a>
+        <a href="#contactos">Contactos</a>
+    </nav>
+    <form id="form">
+        <fieldset>
+            <legend>DATOS</legend>
+
+            <!-- EXAMEN RECUPERATORIO-->
+            <div>  
+                <label> </label>
+                <input 
+            </div>
+
+        <p> 
+        <label for="textnombre" >Nombre:</label>
+            <input class="campo-unico"
+                type="text" 
+                name="tnombre" 
+                id="textnombre" 
+                placeholder="Ingrese nombre del pasajero"
+                size="25" 
+                minlength="3"
+                maxlength="25"
+                autofocus
+            >
+        </p>
+        <p>
+            <label for="cbdestino">Destino:</label>
+            <select id="cbdestino" name="selectdestino">
+                <option value="">Seleccione una ciudad</option>
+                <option value="buenosaires">Buenos Aires</option>
+                <option value="cordoba">Córdoba</option>
+                <option value="rosario">Rosario</option>
+                <option value="mendoza">Mendoza</option>
+                <option value="salta">Salta</option>
+                <option value="Guaminí">Guaminí</option>
+            </select>
+        </p>
+        <p>
+        <label for="fechasalida" >Fecha de salida:</label>
+            <input class="campo-unico"
+                type="date" 
+                name="fechasalida"
+                id="fechasalida"
+            >
+       </p>
+       <p>
+        <label>Medio de transporte:</label>
+            <input type="radio" name="rbtransporte" id="rbavion" value="Avion" checked>Avion
+            <input type="radio" name="rbtransporte" id="rbbus" value="Colectivo">Colectivo
+            <input type="radio" name="rbtransporte" id="rbtren" value="Tren" >Tren
+       </p>
+       <p>
+        <label for="checkhotel">Incluye hotel:</label>
+        <input type="checkbox" name="chhotel" id="checkhotel" value="Si" >
+       </p>
+        <p> 
+        <label for="textemail">E-mail:</label>
+        <input type="text" 
+               name="temail" 
+               id="textemail" 
+               placeholder="Ingrese un mail"
+               size="25" 
+               minlength="3"
+               maxlength="25"
+        >
+        </p>
+        <p>
+        <label for="textcantidad">Cantidad de personas:</label>
+        <input type="number" 
+               name="tcantidad" 
+               id="textcantidad"
+               min="1"
+               max="30"
+        >
+       </p>
+       </fieldset>
+       <fieldset>
+            <input type="hidden" id="indicevuelo">
+            <input type="submit" id="bCargar" value="Cargar">
+            <input type="submit" id="bActualizar" value="Actualizar"  style="display:none;">
+            <input type="button" id="bLimpiar" value="Limpiar" style="display:none;">
+            <input type="button" id="bCancelar" value="Cancelar">
+       </fieldset>
+       <fieldset class="parallax"></fieldset>
+       <fieldset>
+        <h2>Listado de viajes</h2>
+        <table id="tablaviajes"></table>
+       </fieldset>   
+    </form>
+    <footer id="contactos">
+        <a href="https://www.turismocity.com.ar/">contacto</a>
+        <p>J.O</p>
+    </footer>
+</body>
+</html>

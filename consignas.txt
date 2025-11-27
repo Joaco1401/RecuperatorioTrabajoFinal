@@ -1,0 +1,12 @@
+Agregar código de registro 
+
+codigo y fecha 
+
+1. codigo debe tener las 2 primeros numeros , los dos siguientes , 2 letra o numero , 2 letras letras 
+2. fecha registro: 10 días antes a la fecha de hoy. Mostrar dia mes año 
+3. mostrar los datos nuevos en la tabla 
+
+3. filtro a la tabla , va a ser por fecha
+desde fechaR hasta fechaR. 
+
+4. 1 check desde hasta "Todas las fechas"

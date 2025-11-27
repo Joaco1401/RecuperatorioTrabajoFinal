@@ -1,0 +1,94 @@
+body {
+  background-color: #FFE6F0; 
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;}
+
+  h1,h2 {
+  text-align: center;
+  background-color: #A7D8F0; 
+  color: #003366;
+  margin: 10px;
+  padding: 15px;
+  border-bottom: 4px solid #5DADE2;
+  border-radius: 10px 10px 10px 10px;}
+
+  fieldset {
+  border: 2px solid #A7D8F0;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  width: 80%;
+  background-color:#FFD6E0;
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.4);
+ }
+
+#bCargar,#bActualizar ,#bLimpiar ,#bCancelar{
+  background-color: #FF80B5; 
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin: 20px auto;
+}
+.parallax 
+{
+    background-image: url('..//Pre-parcial/img/atardecer.jpg');
+    height:70vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+table {
+  width: 90%;
+  margin: 15px auto;
+  border-collapse: collapse;
+  border: 2px solid blue;
+}
+
+th {
+  background-color: #B3E5FC;
+  color: #003366;
+  padding: 10px;
+  border: 2px solid blue;
+}
+
+td {
+  text-align: center;
+  padding: 8px;
+ border: 2px solid blue;
+}
+footer{background-color: #B3E5FC;
+  color: #003366;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-size: 14px;}
+
+nav {
+  background-color: #B3E5FC; 
+  border-bottom: 2px solid #003366;
+  padding: 10px 0;
+  text-align: center;
+}
+td:nth-child(1) {
+  color: #ff4d6d;  
+  font-weight: bold;
+}
+
+td:nth-child(2) {
+  color: #4d94ff;   
+  font-weight: bold;
+}
+.campo-unico {
+  
+  border: 2px solid #ff7b00;   
+  border-radius: 6px;         
+  padding: 4px;              
+}
