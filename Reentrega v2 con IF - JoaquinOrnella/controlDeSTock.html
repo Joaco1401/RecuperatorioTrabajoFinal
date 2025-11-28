@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Control de Stock</title>
+</head>
+<body>
+    <header>
+        <h1>Control de Stock</h1>
+    </header>
+
+    <nav>
+        <a href="#Formulario">Carga productos</a> | 
+        <a href="#listadoProductos">Listado</a>
+    </nav>
+
+    <hr>
+
+    <section id="Formulario">
+        <h2> Cargar Producto</h2>
+
+        <!-- Mensajes Feedback Exito -->
+        <div id="mjeExito" style="display: none;""></div>
+
+        <!-- form para los inputs -->
+        <form id="form">
+
+        <!-- input oculto para editar/eliminar. -->
+        <input type="hidden" id="idProductoHidden">
+
+            <!--1. Nombre producto-->
+            <div class="espaciado-form">
+                <label for="nombreProducto">Nombre</label>
+                <input type="text" id="nombreProducto" name="nProducto">
+            </div>
+                
+            <!--2. Categoria Combobox-->
+            <div class="espaciado-form">
+                <label for="Categoria">Categoria</label>
+                <select id="Categoria" name="getCategoria">
+                    <option value="">Seleccione</option>
+                    <option value="Hamburguesas">Hamburguesas</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Postres">Postres</option>
+                </select>
+            </div>
+
+            <!-- 3. precio costo-->
+            <div class="espaciado-form">
+                <label for="precioCosto">Precio Costo</label>
+                <input type="text" id="precioCosto" name="pCosto">
+            </div>
+
+            <!-- 4 precio venta-->
+            <div class="espaciado-form">
+                <label for="precioVenta">Precio Venta</label>
+                <input type="text" id="precioVenta" name="pVenta">
+            </div>
+
+            <!-- 5. disponible checkbox -->
+            <div class="espaciado-form">
+                <label for="checkDisponible">Disponible</label>
+                <input type="checkbox" id="checkDisponible" name="chDisponible">
+            </div>
+
+            <!--6. fecha de última compra date -->
+            <div class="espaciado-form">
+                <label for="ultimaCompra">Ultima Compra</label>
+                <input type="date" id="ultimaCompra" name="dtUltimaCompra">
+            </div>
+
+            <!--7. Tipo de pan radioButton-->
+            <div class="espaciado-form" id="rbBurger">
+                <label>Tipo de Pan :</label>
+
+                <input type="radio" id="rbPanArabe" name="rbTipoPan">
+                <label class="rbElement" for="rbPanArabe"> Árabe </label>
+
+                <input type="radio" id="rbPanFrances" name="rbTipoPan">
+                <label class="rbElement" for="rbPanFrances"> Francés </label>
+
+                <input type="radio" id="rbPanQuemado" name="rbTipoPan">
+                <label class="rbElement" for="rbPanQuemado">Quemado </label>
+
+            </div>
+
+            <!-- Mensajes Feedback Error  -->
+            <div id="mjeError" style="display: none;"></div>
+
+            <!-- botones -->
+            <button type="button" id="btnCancelar">Cancelar</button>
+            <button type="button" id="btnGuardar">Guardar Producto</button>
+            <button type="button" id="btnActualizar" style="display: none;">Actualizar</button>
+            
+        </form>
+    </section>
+        
+    <section id="listadoProductos">
+        <h2> Productos </h2>
+        <hr>
+        <table>
+            <!-- Encabezado de Tabla se crea en js-->
+            <tbody id="elementosTabla">
+                <!-- Se llena con js. -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p style="text-align: right;">Parcial Joaquin Ornella</p>
+    </footer>
+
+    <!-- logica principal-->
+    <script src="script.js"></script>
+
+    <!-- logica tester - carga productos-->
+    <script src="tester.js"></script>
+</body>
+</html>

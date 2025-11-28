@@ -1,0 +1,113 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+    text-align: center;
+}
+
+section {
+    margin: 10px;
+    padding:10px;
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: center;
+}
+
+label{
+    font-weight: bold;
+}
+
+/* aplica SOLO a los labels que vengan pegados después de un input, 
+como los elementos del radio button*/
+input + label {
+    font-weight: 400;
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+
+/*espaciado en los componentes del form*/
+.espaciado-form{
+    margin: 5px;
+    padding: 2px;
+
+}
+
+#lblrbutton{
+    font-style: italic;
+}
+
+/* 
+    Validación de errores
+   ============================================= */
+        
+    /* Clase para resaltar el campo erroneo */
+    .error-input {
+        border: 2px solid red !important; /* !important para pisar otros estilos */
+        background-color: #ffe6e6;
+    }
+
+    #mjeError {
+        color: white;
+        background-color: red;
+        box-shadow: 5px 5px lightgray;
+        padding: 10px;
+        margin: 10px 10%;
+        border-radius: 5px;
+        overflow-wrap: break-word;
+        display: none;
+    }
+
+    #mjeExito {
+        color: white;
+        background-color: green;
+        box-shadow: 5px 5px lightgray;
+        padding: 10px;
+        margin: 10px 10%;
+        border-radius: 5px;
+        border-collapse: collapse;
+        overflow-wrap: break-word;
+        display: none;
+    }
+
+        #mjeInfo{
+        color: white;
+        background-color: blue;
+        box-shadow: 5px 5px lightgray;
+        padding: 10px;
+        margin: 10px 10%;
+        border-radius: 5px;
+        border-collapse: collapse;
+        overflow-wrap: break-word;
+        display: none;
+    }
+
+    /* =============================================
+    Iconos
+   ============================================= */
+    /* Clase para los iconos de la tabla */
+.icono-accion {
+    width: 20px;
+    height: 20px;
+    cursor: pointer; /* Pone la manito 👆 */
+    opacity: 0.7;
+}
+
+.icono-accion:hover {
+    width: 30px;
+    height: 30px;
+}
+
+    /* =============================================
+    ""Efecto Desactivado""
+   ============================================= */
+   /* Clase para "grisar" visualmente el div del pan */
+.grupo-deshabilitado {
+    opacity: 0.5;
+    pointer-events: none; /* Bloquea los clicks */
+    background-color: #f9f9f9;
+}
