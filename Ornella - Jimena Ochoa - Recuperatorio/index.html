@@ -20,10 +20,17 @@
 
             <!-- EXAMEN RECUPERATORIO-->
             <div>  
-                <label> </label>
-                <input 
+                <label for="codigo"> Código: </label>
+                <input type="text" id="codigo" name="codigo">
             </div>
 
+            <!-- Fecha registro-->
+            <div>  
+                <label for="fRegistro"> Fecha Registro: </label>
+                <input type="date" id="fRegistro" name="fRegistro">
+            </div>
+
+            <hr>
         <p> 
         <label for="textnombre" >Nombre:</label>
             <input class="campo-unico"
@@ -68,6 +75,7 @@
         <input type="checkbox" name="chhotel" id="checkhotel" value="Si" >
        </p>
         <p> 
+
         <label for="textemail">E-mail:</label>
         <input type="text" 
                name="temail" 
@@ -97,10 +105,33 @@
        </fieldset>
        <fieldset class="parallax"></fieldset>
        <fieldset>
+
         <h2>Listado de viajes</h2>
+
+        <div>
+            <label for = "registroDesde"> Desde </label>
+            <input type="date" id="registroDesde" name="registroDesde">
+        </div>
+
+        <div>
+            <label for = "registroHasta"> Hasta </label>
+            <input type="date" id="registroHasta" name="registroHasta">
+        </div>
+
+        <div>
+            <input type="button" id="btnFiltrar" value="FILTRAR">
+        </div>
+
+        <div>
+            <label for = "checkTodos"> Todas las fechas </label>
+            <input type="checkbox" id="checkTodos" name="checkTodos" value="true">
+        </div>
+
         <table id="tablaviajes"></table>
        </fieldset>   
     </form>
+
+
     <footer id="contactos">
         <a href="https://www.turismocity.com.ar/">contacto</a>
         <p>J.O</p>
