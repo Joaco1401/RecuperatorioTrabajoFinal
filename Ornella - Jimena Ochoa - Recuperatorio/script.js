@@ -65,10 +65,16 @@ function cargar()
 
     //evento nuevos
     let  chTodos = document.getElementById("checkTodos")
-    chTodos.addEventListener("click", actualizarTabla);
+    chTodos.addEventListener("click", function(){
+    // No limpio los componentes desde / hasta al tocar el check
+    document.getElementById("registroDesde").value = "";
+    document.getElementById("registroHasta").value = "";
+    
+    actualizarTabla();
+    });
 
     let bFiltrar = document.getElementById("btnFiltrar");
-    bFiltrar.addEventListener("click", actualizarTablaFiltro);
+    bFiltrar.addEventListener("click", actualizarTablaFiltro); //En la entrega estaba comentada por el bucle en el while
 
     actualizarTabla();
 
@@ -87,7 +93,8 @@ function cargarevento()
 
     // Parcial
     let codigo = document.getElementById("codigo").value;
-    let fRegistro = document.getElementById("fRegistro");
+    //me olvidé de ponerle el value al final, por lo que terminaba manejando un objeto y no el valor. En la validación, se rompe. 
+    let fRegistro = document.getElementById("fRegistro").value; 
 
     // 2 numeros, 1 num y 1 caracter, 2 num , 2 caracteres, 
     let expCodigo = /^\d{2}([a-zA-Z0-9]){2}[A-Z]{2}$/;
@@ -184,6 +191,7 @@ function existe_vuelo(nombre,fecha)
 
 
 function actualizarTabla() {
+    
     let tabla = document.querySelector("#tablaviajes");
 
     console.log("actualiza tabla todos");
@@ -231,7 +239,7 @@ function actualizarTabla() {
         let fila= document.createElement("tr");
         let celda=document.createElement("td");
         
-        celda.setAttribute("colspan" , "5");
+        celda.setAttribute("colspan" , "7"); //no tuve en cuenta los 2 campos agregados
         celda.appendChild(document.createTextNode("No hay viajes registrados"));
         fila.appendChild(celda);
         tabla.appendChild(fila)
@@ -462,15 +470,18 @@ function checkDesdeHasta(desde,hasta){
         const fDesde = new Date(desde);
         const fHasta = new Date(hasta);
 
-        if (fHasta > fDesde){
+        if (fHasta < fDesde){ //lo hice al revés
         alert("La fecha DESDE seleccionada no puede ser menor a la fecha HASTA")
     }
     else devuelve = true;
-
-    return devuelve;
-}}
+    }
+    return devuelve; //me quedó adentro del else por las llaves extras
+}
 
 function actualizarTablaFiltro(){
+
+    //No limpio el check, por lo que al hacer el filtro queda activado y queda confuso.
+    document.getElementById("checkTodos").checked = false;
 
     const fdesde = document.getElementById("registroDesde");
     const fhasta = document.getElementById("registroHasta");
@@ -526,7 +537,7 @@ function actualizarTablaFiltro(){
             let fila= document.createElement("tr");
             let celda=document.createElement("td");
             
-            celda.setAttribute("colspan" , "5");
+            celda.setAttribute("colspan" , "7"); //no tuve en cuenta los 2 campos agregados
             celda.appendChild(document.createTextNode("No hay viajes registrados"));
             fila.appendChild(celda);
             tabla.appendChild(fila)
@@ -536,7 +547,7 @@ function actualizarTablaFiltro(){
         while(i<viajes.length)
         {
 
-            if(viajes[i].fechaRegistro> fdesde.value && viajes[i].fechaRegistro<fhasta.value){
+            if(viajes[i].fechaRegistro>= fdesde.value && viajes[i].fechaRegistro<=fhasta.value){ //puse mayor y menor ESTRICTO, podría haber sido mayor igual y menor igual
                     let fila = document.createElement("tr");
                     let idx = i;  
                     let tdnombre=document.createElement("td");
@@ -598,4 +609,3 @@ function actualizarTablaFiltro(){
     let minimo = new Date();
     minimo.setDate(minimo.getDate() - 10);
     fRegistro.min = minimo.toISOString().split("T")[0];
-
