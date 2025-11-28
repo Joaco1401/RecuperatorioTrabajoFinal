@@ -68,7 +68,7 @@ function cargar()
     chTodos.addEventListener("click", actualizarTabla);
 
     let bFiltrar = document.getElementById("btnFiltrar");
-    //bFiltrar.addEventListener("click", actualizarTablaFiltro);
+    bFiltrar.addEventListener("click", actualizarTablaFiltro);
 
     actualizarTabla();
 
@@ -578,8 +578,9 @@ function actualizarTablaFiltro(){
                     fila.appendChild(tdeliminar);
                     
                     tabla.appendChild(fila);
-                    i++;
+                    
                 }
+                i++; //ésto me generaba el bucle infinito
         }
         
     } // cierre if 
